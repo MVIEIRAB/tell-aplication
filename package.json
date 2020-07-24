@@ -1,0 +1,20 @@
+{
+  "name": "tell-aplication",
+  "version": "1.0.0",
+  "description": "TESTE PROPOSTO COM A FINALIDADE DE SER CONTRATADO (LOLDESIGN)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MVIEIRAB/tell-aplication.git"
+  },
+  "author": "Matheus V.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MVIEIRAB/tell-aplication/issues"
+  },
+  "homepage": "https://github.com/MVIEIRAB/tell-aplication#readme"
+}
