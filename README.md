@@ -1,17 +1,24 @@
 Avaliação
-Essa é sua oportunidade de mostrar seus conhecimentos e o que você sabe sobre boas
+ Essa é sua oportunidade de mostrar seus conhecimentos e o que você sabe sobre boas
 práticas de desenvolvimento e modelagem, mesmo com um problema relativamente simples.
 Durante a avaliação, iremos verificar algumas características do que foi entregue, sendo que
 algumas dessas características tem maior importância para nós do que outras.
 Importante
+
 ● Orientação a objeto
+
 ● Testes
+
 ● Arquitetura/Design interno da aplicação
+
 ● Clareza e organização do código
+
 ● Para Web/Mobile (que são os tipos de projetos que desenvolvemos na
 LOLDESIGN)
 Extras
+
 ● Interface gráfica bem acabada
+
 ● Uso avançado da linguagem e/ou framework
 Caso se sinta limitado(a) pelo tamanho do projeto, fique a vontade para estender um pouco os
 requisitos. 
@@ -59,9 +66,15 @@ procedimentos para executar os testes e a aplicação.
 Pedimos que trabalhe sozinho e não divulgue o resultado na internet.
 O resultado deve ser enviado para eduardo@loldesign.com.br e rodrigo@loldesign.com.br,
 em um arquivo .ZIP por um dos seguintes meios:
+
 ● repositório privado (ex: https://bitbucket.org/ ou https://github.com/)
+
 ● Serviço de hospedagem
+
 ○ Google Drive | OneDrive | Dropbox
+
 ○ https://wetransfer.com/ | https://send.firefox.com
+
 ○ etc
+
 Boa sorte! 
