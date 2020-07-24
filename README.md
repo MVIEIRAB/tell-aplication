@@ -24,7 +24,8 @@ Caso se sinta limitado(a) pelo tamanho do projeto, fique a vontade para estender
 requisitos. 
 
 
-Desafio
+Desafio:
+
 A empresa de telefonia Telzir, especializada em chamadas de longa distância nacional, vai
 colocar um novo produto no mercado chamado FaleMais.
 Normalmente um cliente Telzir pode fazer uma chamada de uma cidade para outra pagando
