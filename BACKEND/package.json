@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/MVIEIRAB/tell-aplication/issues"
   },
-  "homepage": "https://github.com/MVIEIRAB/tell-aplication#readme"
+  "homepage": "https://github.com/MVIEIRAB/tell-aplication#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
 }
