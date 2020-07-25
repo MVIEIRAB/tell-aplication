@@ -84,4 +84,5 @@ em um arquivo .ZIP por um dos seguintes meios:
 
 ○ etc
 
-Boa sorte! 
+
+Boa sorte!
