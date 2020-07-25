@@ -28,6 +28,7 @@ Desafio:
 
 A empresa de telefonia Telzir, especializada em chamadas de longa distância nacional, vai
 colocar um novo produto no mercado chamado FaleMais.
+
 Normalmente um cliente Telzir pode fazer uma chamada de uma cidade para outra pagando
 uma tarifa fixa por minuto, com o preço sendo pré-definido em uma lista com os códigos DDDs
 de origem e destino:
@@ -51,17 +52,17 @@ página na web onde o cliente pode calcular o valor da ligação. Ali, o cliente
 códigos das cidades de origem e destino, o tempo da ligação em minutos e escolher qual o
 plano FaleMais. O sistema deve mostrar dois valores: 
 
-(1) o valor da ligação com o plano
+(1) o valor da ligação com o plano.
 
 (2) sem o plano. O custo inicial de aquisição do plano deve ser desconsiderado para este
-problema.
+    problema.
 
 Ex:
-Origem                                   Destino                        Tempo                         Plano
-011                                        016                            20                FaleMais 30 $ 0,00 $ 38,00
-011                                        017                            80               FaleMais 60 $ 37,40 $ 136,00
-018                                        011                           200              FaleMais 120 $ 167,20 $ 380,00
-018                                        017                           100                      FaleMais 30 - - 
+    Origem                                   Destino                        Tempo                         Plano
+    011                                        016                            20                FaleMais 30 $ 0,00 $ 38,00
+    011                                        017                            80               FaleMais 60 $ 37,40 $ 136,00
+    018                                        011                           200              FaleMais 120 $ 167,20 $ 380,00
+    018                                        017                           100              FaleMais 30      -         - 
 
 
 Instruções
