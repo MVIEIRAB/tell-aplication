@@ -3,7 +3,7 @@ const TellSchema = require('../model/TellModel.js')
 class TellController {
 
     async calc(req, res) {
-        const tell = TellSchema(req.body)
+        const tell = new TellSchema(req.body)
         await tell
             .save()
             .then(res => {

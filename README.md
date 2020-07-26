@@ -54,7 +54,7 @@ plano FaleMais. O sistema deve mostrar dois valores:
 
 (1) o valor da ligação com o plano.
 
-(2) sem o plano. O custo inicial de aquisição do plano deve ser desconsiderado para este
+(2) o valor da ligação sem o plano. O custo inicial de aquisição do plano deve ser desconsiderado para este
     problema.
 
 Ex:
