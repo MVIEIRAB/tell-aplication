@@ -1,17 +1,28 @@
-const TellSchema = require('../model/TellModel.js')
+const codigoregiao = require('../model/TellModel.js')
 
 class TellController {
 
     async calc(req, res) {
-        const tell = new TellSchema(req.body)
-        await tell
-            .save()
-            .then(res => {
-                return res.status(200).json(res)
-            })
-            .catch(error => {
-                return res.status(500).json({error: "algo deu errado"})
-            })
+        try {
+
+            const plans = await codigoregiao.create(req.body)
+            return res.send({ plans })
+
+        } catch (err) {
+
+            return res.status(400).send({ error: "FALHA NA INSERÇÃO DOS DADOS!" })
+
+        }
+    }
+
+    async list(req, res) {
+        try {
+            const data = await codigoregiao.find()
+            return res.send({ data })
+        } catch (error) {
+            console.log(error)
+        }
+
     }
 
 }

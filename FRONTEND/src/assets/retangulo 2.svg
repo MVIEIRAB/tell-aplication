@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="451" height="306" viewBox="0 0 451 306">
+  <defs>
+    <filter id="Retângulo_17" x="0" y="0" width="451" height="306" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.459"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="retangulo_2" data-name="retangulo 2" transform="translate(-735 -266)">
+    <g transform="matrix(1, 0, 0, 1, 735, 266)" filter="url(#Retângulo_17)">
+      <rect id="Retângulo_17-2" data-name="Retângulo 17" width="433" height="288" rx="10" transform="translate(9 9)" fill="#fff"/>
+    </g>
+    <text id="FALEMAIS_60" data-name="FALEMAIS 60" transform="translate(902 509)" font-size="18" font-family="Arial-BoldMT, Arial" font-weight="700"><tspan x="0" y="0">FALEMAIS 60</tspan></text>
+    <g id="Grupo_37" data-name="Grupo 37" transform="translate(501 -218)">
+      <circle id="Elipse_4" data-name="Elipse 4" cx="65.5" cy="65.5" r="65.5" transform="translate(394 530)" fill="#ee6820"/>
+    </g>
+  </g>
+</svg>

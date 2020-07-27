@@ -1,11 +1,16 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
+
 app.use(express.json())
 
-const TellRoutes = require('./routes/TellRoutes')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }))
 
-app.use('/telzir', TellRoutes)
+const route = require('./routes/TellRoutes')
 
-app.listen(3000, () => {
+app.use('/telzir', route)
+
+app.listen(3001, () => {
     console.log('to aqui, eba')
 })

@@ -1,8 +1,10 @@
 const express = require('express')
-const router = express.Router()
+const route = express.Router()
 
 const TellController = require('../controller/TellController')
 
-router.post('/', TellController.calc)
+route.post('/', TellController.calc)
+route.get('/list', TellController.list)
 
-module.exports = router
+
+module.exports = route
