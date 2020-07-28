@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {Component} from 'react'
 import * as S from './styles'
 
 
-class Button extends React.Component {
+class Button extends Component {
     constructor(props) {
         super(props)
     }

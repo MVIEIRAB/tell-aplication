@@ -9,5 +9,4 @@ justify-content: center;
 color:#fff;
 border-radius: 10px;
 display: flex;
-
 `

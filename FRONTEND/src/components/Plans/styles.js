@@ -21,7 +21,6 @@ export const Container = styled.div`
     &:hover{
         opacity: 0.7;
     }
-
 `
 
 export const TopCard = styled.div`

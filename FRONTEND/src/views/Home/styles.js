@@ -11,7 +11,7 @@ export const SelectArea = styled.div`
     margin-top 20px;
 
     button {
-        background: none;
+        background-color: #20295F;;
         border: none;
     }
 `
