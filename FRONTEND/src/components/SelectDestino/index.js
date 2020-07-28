@@ -1,12 +1,21 @@
 import React from 'react'
 import * as S from './styles'
+import { dataDestino } from '../../client/destino/index'
 
-function SelectDestino({title}) {
-    return (
-        <S.Container>
-            <h1>{title}</h1>
-        </S.Container>
-    )
-}
+class Destino extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {}
+    }
 
-export default SelectDestino
+    render() {
+        return (
+            <S.Select onChange={(e)=>this.props.handle(e.target.value)}>
+                <option>Selecione o Destino</option>
+                {dataDestino.map((item) => { return (<option value={item}>{item}</option>) })}
+            </S.Select>
+        )
+    }
+};
+
+export default Destino

@@ -1,49 +1,97 @@
 import React from 'react'
 import * as S from './styles'
 
-import api from '../../services/api'
-
 //MEUS COMPONENTES
-
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import SelectOrigem from '../../components/SelectOrigem'
-import SelectDestino from '../../components/SelectDestino'
-import SelectMinutos from '../../components/SelectMinutos'
-import Botao from '../../components/Botao'
+import Destino from '../../components/SelectDestino'
+import InputMinutos from '../../components/inputMinutos'
+import Button from '../../components/Button'
 import Plans from '../../components/Plans'
 
-function Home() {
-    return (
-        <S.Container>
-        <Header />
+import {plans} from '../../client/planos/index'
+import {tablePrice} from '../../client/tablePrice/index'
+
+class Home extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            origem:'',
+            destino:'',
+            tempo:'',
+            price:'',
+            result:'-',
+            valueForPlan:{},
+            valueNoPlan:''
+        }
+    }
+
+    calculation = () => {
+        const { origem, destino, tempo } = this.state
         
-        <S.SelectArea>
-
-        <SelectOrigem title="DDD Origem"/>
-        <SelectDestino title="DDD Destino"/>
-        <SelectMinutos title="Tempo"/>
+        let valueForMinute
         
-        <button type="submit">
-            <Botao title="CALCULAR"/>
-        </button>
+        tablePrice.map((item) => {
+            if (item.origem === origem && item.destino === destino) valueForMinute = item.priceMin
+            return valueForMinute
+        })
 
-        </S.SelectArea>
+        const minutesForPlan = {
+            minutesFM30: tempo - plans.falemais30,
+            minutesFM60: tempo - plans.falemais60,
+            minutesFM120: tempo - plans.falemais120
+        }
 
-        <S.Title>
-            <h3>PLANOS</h3>
-        </S.Title>
+        const valueForPlan = {
+            valueFM30: minutesForPlan.minutesFM30 > 0 ? minutesForPlan.minutesFM30 * valueForMinute : 0,
+            valueFM60: minutesForPlan.minutesFM60 > 0 ? minutesForPlan.minutesFM60 * valueForMinute : 0,
+            valueFM120: minutesForPlan.minutesFM120 > 0 ? minutesForPlan.minutesFM120 * valueForMinute : 0
+        }
 
-        <S.Content>
-            <Plans title="FALEMAIS 30"/>
-            <Plans title="FALEMAIS 60"/>
-            <Plans title="FALEMAIS 120"/>
-            <Plans title="CUSTO SEM OS PLANOS"/>
-        </S.Content>
+        const valueNoPlan = tempo * valueForMinute
 
-        <Footer />
-        </S.Container>
-    )
+        this.setState({valueForPlan,valueNoPlan})
+    }
+
+    handleOrigem = (value) => {
+        this.setState({origem:value})
+    }
+
+    handleDestino = (value) => {
+        this.setState({destino:value})
+    }
+
+    handleTempo = (value) => {
+        this.setState({tempo:value})
+    }
+
+    render() {
+        return (
+            <S.Container>
+                <Header />
+
+                <S.SelectArea>
+                    <SelectOrigem title="DDD Origem" handle={origem => this.handleOrigem(origem)} />
+                    <Destino title="DDD Destino" handle={destino => this.handleDestino(destino)}/>
+                    <InputMinutos handle={tempo => this.handleTempo(tempo)} title="Tempo"  />
+                    <Button title="CALCULAR" calculation={() => this.calculation()} />
+                </S.SelectArea>
+
+                <S.Title>
+                    <h3>PLANOS</h3>
+                </S.Title>
+
+                <S.Content>
+                    <Plans result={this.state.valueForPlan.valueFM30} title="COM FALEMAIS 30"/>
+                    <Plans result={this.state.valueForPlan.valueFM60}title="COM FALEMAIS 60" />
+                    <Plans result={this.state.valueForPlan.valueFM120}title="COM FALEMAIS 120" />
+                    <Plans result={this.state.valueNoPlan} title= "CUSTO SEM OS PLANOS" />
+                </S.Content>
+                <Footer />
+            </S.Container>
+        )
+    }
 }
 
 export default Home

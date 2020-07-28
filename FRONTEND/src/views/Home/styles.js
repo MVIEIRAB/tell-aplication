@@ -5,7 +5,7 @@ export const Container = styled.div`
 `
 
 export const SelectArea = styled.div`
-    width: 40%;
+    width: 43%;
     display: flex;
     justify-content: space-around;
     margin-top 20px;
