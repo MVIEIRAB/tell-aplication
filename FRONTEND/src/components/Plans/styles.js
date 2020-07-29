@@ -5,6 +5,7 @@ export const Container = styled.div`
     height: 230px;
     box-shadow: -3px 1px 13px -2px rgba(0,0,0,0.73);
     border-radius: 10px;
+    background: #20295F;
 
     display: flex;
     align-items: center;
@@ -12,32 +13,45 @@ export const Container = styled.div`
     flex-direction: column;
 
 
-    margin:30px;
+    margin:35px;
     margin-top: 60px;
 
-    cursor:pointer;
     transition: all 0.3s ease;
 
     &:hover{
-        opacity: 0.7;
+        opacity: 0.95;
     }
 `
 
 export const TopCard = styled.div`
-    margin-top: 20px;
+    margin-top:-20px;
+    font-size: 9px;
+    color:white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 `
 
+
+export const MidCard = styled.div`
+    color:white;
+    h1{
+        font-size: 30px;
+    }
+`
+
 export const BottomCard = styled.div`
-    display: flex;
-    margin-top: 20px;
-    align-items: center;
+    color: #20295F;
+    position: relative;
+    top: 10px;
+    background:#EE6820;
+    padding:0 20px;
+    cursor:pointer;
+
     
 
-        h1{
-            font-size: 20px;
-        }
+    h1{
+        font-size: 15px;
+    }
 `

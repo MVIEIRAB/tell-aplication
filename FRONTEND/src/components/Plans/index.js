@@ -10,11 +10,15 @@ class Plans extends React.Component {
         return (
             <S.Container>
                 <S.TopCard>
-                    <h1>R$ {this.props.result}</h1>
+                    <h1>{this.props.title}</h1>
                 </S.TopCard>
 
+                <S.MidCard>
+                    <h1>R${this.props.result}</h1>
+                </S.MidCard>
+
                 <S.BottomCard>
-                    <h1>{this.props.title}</h1>
+                    <h1>CONTRATE</h1>
                 </S.BottomCard>
             </S.Container>
         )

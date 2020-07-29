@@ -90,9 +90,9 @@ class Home extends React.Component {
                 </S.Title>
 
                 <S.Content>
-                    <Plans result={this.state.valueForPlan.valueFM30}  title="COM FALEMAIS 30" />
-                    <Plans result={this.state.valueForPlan.valueFM60}  title="COM FALEMAIS 60" />
-                    <Plans result={this.state.valueForPlan.valueFM120} title="COM FALEMAIS 120" />
+                    <Plans result={this.state.valueForPlan.valueFM30}  title="FALEMAIS 30" />
+                    <Plans result={this.state.valueForPlan.valueFM60}  title="FALEMAIS 60" />
+                    <Plans result={this.state.valueForPlan.valueFM120} title="FALEMAIS 120" />
                     <Plans result={this.state.valueNoPlan}             title="CUSTO SEM OS PLANOS" />
                 </S.Content>
                 <Footer />
