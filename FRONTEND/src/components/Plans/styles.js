@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    width: 380px;
-    height: 250px;
+    width: 350px;
+    height: 230px;
     box-shadow: -3px 1px 13px -2px rgba(0,0,0,0.73);
     border-radius: 10px;
 
@@ -12,8 +12,8 @@ export const Container = styled.div`
     flex-direction: column;
 
 
-    margin:20px;
-    margin-top: 45px;
+    margin:30px;
+    margin-top: 60px;
 
     cursor:pointer;
     transition: all 0.3s ease;

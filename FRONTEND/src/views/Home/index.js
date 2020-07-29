@@ -4,8 +4,7 @@ import * as S from './styles'
 //MEUS COMPONENTES
 import Header       from '../../components/Header'
 import Footer       from '../../components/Footer'
-import SelectOrigem from '../../components/SelectOrigem'
-import Destino      from '../../components/SelectDestino'
+import Select       from '../../components/Select'
 import InputMinutos from '../../components/inputMinutos'
 import Button       from '../../components/Button'
 import Plans        from '../../components/Plans'
@@ -44,9 +43,17 @@ class Home extends React.Component {
         }
 
         const valueForPlan = {
-            valueFM30: minutesForPlan.minutesFM30 > 0 ? ((minutesForPlan.minutesFM30 * valueForMinute) * 10) / 100 : 0,
-            valueFM60: minutesForPlan.minutesFM60 > 0 ? ((minutesForPlan.minutesFM60 * valueForMinute) * 10) / 100 : 0,
-            valueFM120: minutesForPlan.minutesFM120 > 0 ? ((minutesForPlan.minutesFM120 * valueForMinute) * 10) / 100 : 0
+            valueFM30: minutesForPlan.minutesFM30 > 0 
+            ? (minutesForPlan.minutesFM30 * valueForMinute) + ((minutesForPlan.minutesFM30 * valueForMinute) * 10) / 100 
+            : 0,
+            
+            valueFM60: minutesForPlan.minutesFM60 > 0 
+            ? (minutesForPlan.minutesFM60 * valueForMinute) + ((minutesForPlan.minutesFM60 * valueForMinute) * 10) / 100 
+            : 0,
+
+            valueFM120: minutesForPlan.minutesFM120 > 0 
+            ? (minutesForPlan.minutesFM120 * valueForMinute) + ((minutesForPlan.minutesFM120 * valueForMinute) * 10) / 100 
+            : 0
         }
 
         const valueNoPlan = tempo * valueForMinute
@@ -72,9 +79,9 @@ class Home extends React.Component {
                 <Header />
 
                 <S.SelectArea>
-                    <SelectOrigem title="DDD Origem"  handle={origem => this.handleOrigem(origem)} />
-                    <Destino      title="DDD Destino" handle={destino => this.handleDestino(destino)} />
-                    <InputMinutos handle={tempo =>    this.handleTempo(tempo)} title="Tempo" />
+                    <Select       title="DDD Origem"  handle={origem =>  this.handleOrigem(origem)} />
+                    <Select       title="DDD Destino" handle={destino => this.handleDestino(destino)} />
+                    <InputMinutos title="Tempo"       handle={tempo =>   this.handleTempo(tempo)} />
                     <Button       title="CALCULAR"    calculation={() => this.calculation()} />
                 </S.SelectArea>
 

@@ -2,7 +2,7 @@ import React from 'react'
 import * as S from './styles'
 import { dataDestino } from '../../client/destino/index'
 
-class Destino extends React.Component {
+class Select extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
@@ -11,11 +11,11 @@ class Destino extends React.Component {
     render() {
         return (
             <S.Select onChange={(e)=>this.props.handle(e.target.value)}>
-                <option>Selecione o Destino</option>
+                <option>{this.props.title}</option>
                 {dataDestino.map((item) => { return (<option value={item}>{item}</option>) })}
             </S.Select>
         )
     }
 };
 
-export default Destino
+export default Select
