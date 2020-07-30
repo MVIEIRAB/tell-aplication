@@ -9,6 +9,7 @@ function Header() {
             <S.LeftSide>
                 <img src={logo} alt='logo' />
             </S.LeftSide>
+            
             <S.RightSide>
                 <a href="#">ÍNICIO</a>
             </S.RightSide>

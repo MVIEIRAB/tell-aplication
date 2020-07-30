@@ -1,13 +1,13 @@
-import React  from 'react'
+import React from 'react'
 import * as S from './styles'
 
 //MEUS COMPONENTES
-import Header       from '../../components/Header'
-import Footer       from '../../components/Footer'
-import Select       from '../../components/Select'
+import Header from '../../components/Header'
+import Footer from '../../components/Footer'
+import Select from '../../components/Select'
 import InputMinutos from '../../components/inputMinutos'
-import Button       from '../../components/Button'
-import Plans        from '../../components/Plans'
+import Button from '../../components/Button'
+import Plans from '../../components/Plans'
 
 import { plans } from '../../client/planos/index'
 import { tablePrice } from '../../client/tablePrice/index'
@@ -22,7 +22,8 @@ class Home extends React.Component {
             price: '',
             result: '-',
             valueForPlan: {},
-            valueNoPlan: ''
+            valueNoPlan: '',
+            simulated: false
         }
     }
 
@@ -43,22 +44,22 @@ class Home extends React.Component {
         }
 
         const valueForPlan = {
-            valueFM30: minutesForPlan.minutesFM30 > 0 
-            ? (minutesForPlan.minutesFM30 * valueForMinute) + ((minutesForPlan.minutesFM30 * valueForMinute) * 10) / 100 
-            : 0,
-            
-            valueFM60: minutesForPlan.minutesFM60 > 0 
-            ? (minutesForPlan.minutesFM60 * valueForMinute) + ((minutesForPlan.minutesFM60 * valueForMinute) * 10) / 100 
-            : 0,
+            valueFM30: minutesForPlan.minutesFM30 > 0
+                ? (minutesForPlan.minutesFM30 * valueForMinute) + ((minutesForPlan.minutesFM30 * valueForMinute) * 10) / 100
+                : 0,
 
-            valueFM120: minutesForPlan.minutesFM120 > 0 
-            ? (minutesForPlan.minutesFM120 * valueForMinute) + ((minutesForPlan.minutesFM120 * valueForMinute) * 10) / 100 
-            : 0
+            valueFM60: minutesForPlan.minutesFM60 > 0
+                ? (minutesForPlan.minutesFM60 * valueForMinute) + ((minutesForPlan.minutesFM60 * valueForMinute) * 10) / 100
+                : 0,
+
+            valueFM120: minutesForPlan.minutesFM120 > 0
+                ? (minutesForPlan.minutesFM120 * valueForMinute) + ((minutesForPlan.minutesFM120 * valueForMinute) * 10) / 100
+                : 0
         }
 
         const valueNoPlan = tempo * valueForMinute
 
-        this.setState({ valueForPlan, valueNoPlan })
+        this.setState({ valueForPlan, valueNoPlan, simulated: true })
     }
 
     handleOrigem = (value) => {
@@ -73,28 +74,36 @@ class Home extends React.Component {
         this.setState({ tempo: value })
     }
 
+    clearCalc() {
+        this.setState({ simulated: false })
+    }
+
     render() {
+        const { simulated, valueForPlan, valueNoPlan } = this.state
         return (
             <S.Container>
                 <Header />
 
                 <S.SelectArea>
-                    <Select       title="DDD Origem"  handle={origem =>  this.handleOrigem(origem)} />
-                    <Select       title="DDD Destino" handle={destino => this.handleDestino(destino)} />
-                    <InputMinutos title="Tempo"       handle={tempo =>   this.handleTempo(tempo)} />
-                    <Button       title="CALCULAR"    calculation={() => this.calculation()} />
+                    <Select title="DDD Origem" handle={origem => this.handleOrigem(origem)} />
+                    <Select title="DDD Destino" handle={destino => this.handleDestino(destino)} />
+                    <InputMinutos title="Tempo" handle={tempo => this.handleTempo(tempo)} />
+                    <Button title="CALCULAR" calculation={() => this.calculation()} />
                 </S.SelectArea>
 
                 <S.Title>
                     <h3>PLANOS</h3>
                 </S.Title>
 
-                <S.Content>
-                    <Plans result={this.state.valueForPlan.valueFM30}  title="FALEMAIS 30" />
-                    <Plans result={this.state.valueForPlan.valueFM60}  title="FALEMAIS 60" />
-                    <Plans result={this.state.valueForPlan.valueFM120} title="FALEMAIS 120" />
-                    <Plans result={this.state.valueNoPlan}             title="CUSTO SEM OS PLANOS" />
-                </S.Content>
+                {simulated
+                    ? <S.Content>
+                        <Plans result={valueForPlan.valueFM30.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 30" />
+                        <Plans result={valueForPlan.valueFM60.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 60" />
+                        <Plans result={valueForPlan.valueFM120.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 120" />
+                        <Plans result={valueNoPlan.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="CUSTO SEM OS PLANOS" />
+                        <Button title="Limpar" calculation={() => this.clearCalc()} />
+                    </S.Content>
+                    : ("")}
                 <Footer />
             </S.Container>
         )
