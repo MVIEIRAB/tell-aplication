@@ -14,7 +14,7 @@ class Plans extends React.Component {
                 </S.TopCard>
 
                 <S.MidCard>
-                    <h1>R${this.props.result}</h1>
+                    <h1>R$ {this.props.result}</h1>
                 </S.MidCard>
 
                 <S.BottomCard>

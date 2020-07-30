@@ -1,3 +1,0 @@
-describe('First Test', function() {
-    
-})

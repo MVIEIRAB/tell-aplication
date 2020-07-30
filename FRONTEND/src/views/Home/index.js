@@ -85,10 +85,10 @@ class Home extends React.Component {
                 <Header />
 
                 <S.SelectArea>
-                    <Select title="DDD Origem" handle={origem => this.handleOrigem(origem)} />
-                    <Select title="DDD Destino" handle={destino => this.handleDestino(destino)} />
-                    <InputMinutos title="Tempo" handle={tempo => this.handleTempo(tempo)} />
-                    <Button title="CALCULAR" calculation={() => this.calculation()} />
+                    <Select class="input-ddd-1" title="DDD Origem" handle={origem => this.handleOrigem(origem)} />
+                    <Select data-cy="input-ddd-2" title="DDD Destino" handle={destino => this.handleDestino(destino)} />
+                    <InputMinutos data-cy="input-minutes" title="Tempo" handle={tempo => this.handleTempo(tempo)} />
+                    <Button data-cy="submit-button" title="CALCULAR" calculation={() => this.calculation()} />
                 </S.SelectArea>
 
                 <S.Title>
@@ -97,10 +97,10 @@ class Home extends React.Component {
 
                 {simulated
                     ? <S.Content>
-                        <Plans result={valueForPlan.valueFM30.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 30" />
-                        <Plans result={valueForPlan.valueFM60.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 60" />
-                        <Plans result={valueForPlan.valueFM120.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 120" />
-                        <Plans result={valueNoPlan.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="CUSTO SEM OS PLANOS" />
+                        <Plans data-cy="result-1" result={valueForPlan.valueFM30.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 30" />
+                        <Plans data-cy="result-1" result={valueForPlan.valueFM60.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 60" />
+                        <Plans data-cy="result-1" result={valueForPlan.valueFM120.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="FALEMAIS 120" />
+                        <Plans data-cy="result-1" result={valueNoPlan.toLocaleString('pt-br', {minimumFractionDigits: 2})} title="CUSTO SEM OS PLANOS" />
                         <Button title="Limpar" calculation={() => this.clearCalc()} />
                     </S.Content>
                     : ("")}
