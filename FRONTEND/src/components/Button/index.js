@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import * as S from './styles'
 
 
@@ -10,7 +10,7 @@ class Button extends Component {
     render() {
         const { title, calculation } = this.props
         return (
-            <S.Button onClick={() => { calculation() }}>
+            <S.Button id={this.props.id} onClick={() => { calculation() }}>
                 {title}
             </S.Button>
         )

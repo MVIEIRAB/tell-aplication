@@ -8,7 +8,7 @@ class Plans extends React.Component {
     }
     render() {
         return (
-            <S.Container>
+            <S.Container id={this.props.id}>
                 <S.TopCard>
                     <h1>{this.props.title}</h1>
                 </S.TopCard>

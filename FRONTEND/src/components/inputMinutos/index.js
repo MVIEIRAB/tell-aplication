@@ -9,7 +9,7 @@ class InputMinutes extends React.Component {
 
     render() {
         return (
-            <S.Input placeholder='Minutos' onChange={(e) => this.props.handle(e.target.value)} />
+            <S.Input id={this.props.id} placeholder='Minutos' onChange={(e) => this.props.handle(e.target.value)} />
         )
     }
 }

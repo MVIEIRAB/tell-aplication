@@ -10,7 +10,7 @@ class Select extends React.Component {
 
     render() {
         return (
-            <S.Select onChange={(e)=>this.props.handle(e.target.value)}>
+            <S.Select id={this.props.id} onChange={(e) => this.props.handle(e.target.value)}>
                 <option>{this.props.title}</option>
                 {dataDestino.map((item) => { return (<option value={item}>{item}</option>) })}
             </S.Select>
