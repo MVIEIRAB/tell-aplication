@@ -63,26 +63,3 @@ Ex:
     011                                        017                            80               FaleMais 60 $ 37,40 $ 136,00
     018                                        011                           200              FaleMais 120 $ 167,20 $ 380,00
     018                                        017                           100              FaleMais 30      -         - 
-
-
-Instruções
-Utilize uma das linguagens: JavaScript, C#, Ruby, PHP, Python ou Java. Escolha a que mais
-se sentir confortável. Pode ser utilizado qualquer biblioteca externa, principalmente para os
-testes (RSpec ou NUnit, por exemplo). Adicione um arquivo README.md com os
-procedimentos para executar os testes e a aplicação.
-Pedimos que trabalhe sozinho e não divulgue o resultado na internet.
-O resultado deve ser enviado para eduardo@loldesign.com.br e rodrigo@loldesign.com.br,
-em um arquivo .ZIP por um dos seguintes meios:
-
-● repositório privado (ex: https://bitbucket.org/ ou https://github.com/)
-
-● Serviço de hospedagem
-
-○ Google Drive | OneDrive | Dropbox
-
-○ https://wetransfer.com/ | https://send.firefox.com
-
-○ etc
-
-
-Boa sorte!
