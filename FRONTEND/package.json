@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "cypress": "4.11.0",
+    "cypress": "4.12.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-html-id": "^0.1.5",
